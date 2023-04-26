@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:to_do_app/ui/pages/home_page.dart';
 
 import '../theme.dart';
 
@@ -27,7 +28,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => Get.back,
+          onPressed: () => Get.back(),
           icon: const Icon(
             Icons.arrow_back_ios,
           ),
