@@ -6,7 +6,7 @@ import 'package:to_do_app/ui/pages/home_page.dart';
 import '../theme.dart';
 
 class NotificationScreen extends StatefulWidget {
-  const NotificationScreen({Key? key, required this.payload}) : super(key: key);
+  const NotificationScreen( {Key? key, required this.payload}) : super(key: key);
   final String payload;
 
   @override
@@ -26,11 +26,13 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.theme.backgroundColor,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
+            color: Get.isDarkMode ? Colors.white : Colors.black,
           ),
         ),
         elevation: 0,
@@ -96,7 +98,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       const SizedBox(height: 20),
-                      Row(
+                      const Row(
                         children: [
                           Icon(
                             Icons.description,
@@ -113,14 +115,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       const SizedBox(height: 20),
                       Text(
                         _payload.toString().split('||')[1],
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.justify,
                       ),
                       const SizedBox(height: 20),
-                      Row(
+                      const Row(
                         children: [
                           Icon(
                             Icons.calendar_today_outlined,
@@ -137,7 +139,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                       const SizedBox(height: 20),
                       Text(
                         _payload.toString().split('||')[2],
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                         ),

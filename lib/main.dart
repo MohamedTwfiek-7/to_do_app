@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:to_do_app/db/db_helper.dart';
+import 'package:to_do_app/services/notification_services.dart';
 import 'package:to_do_app/services/theme_services.dart';
 import 'package:to_do_app/ui/pages/notification_screen.dart';
 import 'package:to_do_app/ui/theme.dart';
 
 import 'ui/pages/home_page.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();// must use that line if the main function is Async
+  NotifyHelper().initializeNotification();
+  await DBHelper.initDB();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 

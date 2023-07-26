@@ -20,17 +20,21 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 15),
+      margin: EdgeInsets.only(top: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
-            style: titleStyle,
+            style: TextStyle(
+              color: Get.isDarkMode ? Colors.white : Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 10),
-            margin: EdgeInsets.only(left: 15),
+            padding: EdgeInsets.only(left: 14),
+            margin: EdgeInsets.only(top: 8),
             width: SizeConfig.screenWidth,
             height: 50,
             decoration: BoxDecoration(
@@ -45,12 +49,21 @@ class InputField extends StatelessWidget {
                   child: TextFormField(
                     controller: controller,
                     autofocus: false,
-                    readOnly: widget != null? true : false,
-                    style: subTitleStyle,
-                    cursorColor: Get.isDarkMode ? Colors.grey[100] : Colors.grey[700],
+                    readOnly: widget != null ? true : false,
+                    style: TextStyle(
+                      color: Get.isDarkMode ? Colors.white : Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    cursorColor:
+                        Get.isDarkMode ? Colors.grey[100] : Colors.grey[700],
                     decoration: InputDecoration(
                       hintText: hint,
-                      hintStyle: subTitleStyle,
+                      hintStyle: TextStyle(
+                        color: Get.isDarkMode ? Colors.white : Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: context.theme.backgroundColor,
